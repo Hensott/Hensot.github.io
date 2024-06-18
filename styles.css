@@ -1,0 +1,443 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #ccc;
+    background-image: url('images/gradient.jpg'); /* Путь к изображению заднего плана */
+    background-size: cover; /* Растягиваем изображение на весь экран */
+    background-position: center; /* Центрируем изображение */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7); /* Прозрачный черный фон для хорошей видимости текста */
+    color: #ccc;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+header nav ul li a:hover {
+    background: #555;
+}
+
+main {
+    padding: 20px 0;
+}
+
+main h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #f0f0f0;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Максимальная ширина баннера */
+    height: 300px;
+    margin: 20px auto; /* Центрирование баннера */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.banner .slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.banner .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.banner button.prev {
+    left: 10px;
+}
+
+.banner button.next {
+    right: 10px;
+}
+
+.game-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+}
+
+.game-item {
+    background: linear-gradient(to bottom, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.5));
+    border: 1px solid #444;
+    border-radius: 5px;
+    min-width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    scroll-snap-align: start;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.game-item img {
+    width: 100%;
+    border-bottom: 1px solid #444;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #2e2e2e;
+    color: #ccc;
+}
+
+form button {
+    background: #555;
+    color: #ccc;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #777;
+}
+
+/* Scrollbar styles */
+.game-list {
+    scrollbar-width: thin;
+    scrollbar-color: #555 #1e1e1e;
+}
+
+.game-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.game-list::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.game-list::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+    border: 3px solid #1e1e1e;
+}
+
+button {
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #FF6F5C;
+    background: transparent;
+    color: white;
+    font-style: calibri;
+    position: relative;
+}
+
+button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 80px;
+    height: 0;
+    background: #FF6F5C;
+    transition: all ease 500ms;
+}
+
+button:hover:after {
+    height: 100%;
+}
+
+/* Стили для вертикального списка игр */
+#vertical-game-list {
+    background: linear-gradient(to bottom, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.5));
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#vertical-game-list h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* CSS for 3x3 Grid Layout */
+.vertical-game-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    gap: 20px; /* Gap between grid items */
+}
+
+.vertical-game-item {
+    position: relative;
+    background-color: #C646A5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.vertical-game-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.vertical-game-item h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.vertical-game-item p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Стили для различных скидок */
+.discount-80::before {
+    content: "80% off!";
+    background-color: #ff6b6b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-90::before {
+    content: "90% off!";
+    background-color: #6bd4fe;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-50::before {
+    content: "50% off!";
+    background-color: #ffa94d;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-70::before {
+    content: "70% off!";
+    background-color: #ffcc80;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-60::before {
+    content: "60% off!";
+    background-color: #b19cd9;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-85::before {
+    content: "85% off!";
+    background-color: #f368e0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-75::before {
+    content: "75% off!";
+    background-color: #80d4ff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-55::before {
+    content: "55% off!";
+    background-color: #f0932b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-65::before {
+    content: "65% off!";
+    background-color: #6bff9b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.discount-95::before {
+    content: "95% off!";
+    background-color: #ffadad;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Анимация для элемента скидки */
+.vertical-game-item:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    .game-item, .vertical-game-item {
+        min-width: 45%;
+    }
+
+    .vertical-game-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .banner {
+        height: 250px;
+    }
+
+    .banner button {
+        padding: 10px;
+    }
+
+    .game-item, .vertical-game-item {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .vertical-game-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .game-item, .vertical-game-item {
+        margin-bottom: 10px;
+    }
+
+    form input, form textarea {
+        padding: 5px;
+    }
+
+    form button {
+        padding: 5px;
+    }
+}
