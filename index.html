@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Game Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#games">Игры</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="cart.html">Корзина</a></li> <!-- Добавляем ссылку на корзину -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <p>Ваш универсальный магазин лучших компьютерных игр.</p>
+            </div>
+        </section>
+
+        <section id="games">
+            <div class="container">
+                <h2>Наши игры</h2>
+                <div class="banner">
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <div class="slides">
+                        <div class="slide"><a href="civi_page.html"><img src="images/civi.jpg" alt="Banner 1"></a></div>
+                        <div class="slide"><a href="#game-list"><img src="images/deadspace.jpg" alt="Banner 2"></a></div>
+                        <div class="slide"><a href="#game-list"><img src="images/mafia.jpg" alt="Banner 3"></a></div>
+                    </div>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+                <div class="game-list" id="game-list">
+                    <div class="game-item">
+                        <img src="images/gam2.webp" alt="Game 1">
+                        <h3>Hi-Fi Rush</h3>
+                        <p>Экшен игра </p>
+                    </div>
+                    <div class="game-item">
+                        <img src="images/game3.webp" alt="Game 2">
+                        <h3>Battlefield V</h3>
+                        <p>Шутер от первого лица</p>
+                    </div>
+                    <div class="game-item">
+                        <img src="images/game4.webp" alt="Game 3">
+                        <h3>Elden Ring</h3>
+                        <p>Souls-like игра</p>
+                    </div>
+                    <div class="game-item">
+                        <img src="images/game7.webp" alt="Game 4">
+                        <h3>Sid Meier’s Civilization VI</h3>
+                        <p>ПОшаговая стратегия</p>
+                    </div>
+                    <div class="game-item">
+                        <img src="images/game8.webp" alt="Game 5">
+                        <h3>Monster-Hunter Stories</h3>
+                        <p>Приключенческая игра</p>
+                    </div>
+                    <div class="game-item">
+                        <img src="images/game9.webp" alt="Game 6">
+                        <h3>Borderlands 2</h3>
+                        <p>Экшн Шутер</p>
+                    </div>
+                    <!-- Add more game items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Баннер Red Dead Redemption 2 (RDR2) -->
+        <section id="rdr2-banner">
+            <div class="container">
+                <div class="banner">
+                    <a href="gamepurc.html"><img src="images/rdr2.webp" alt="RDR2 Banner" class="parallax"></a>
+                </div>
+            </div>
+        </section>
+
+       <!-- Вертикальный список игр с разными скидками -->
+       <section id="vertical-game-list">
+        <div class="container">
+            <h2>Игры по скидке</h2>
+            <div class="vertical-game-items">
+                <div class="vertical-game-item discount-80">
+                    <img src="images/game1.webp" alt="Game 1">
+                    <h3>WarTales</h3>
+                    <p>Удивительная приключенческая игра.</p>
+                </div>
+                <div class="vertical-game-item discount-90">
+                    <img src="images/game5.webp" alt="Game 5">
+                    <h3>Dead by Daylight</h3>
+                    <p>Увлекательная экшн-игра.</p>
+                </div>
+                <div class="vertical-game-item discount-50">
+                    <img src="images/game6.webp" alt="Game 6">
+                    <h3>System Shock</h3>
+                    <p>Сложная игра-головоломка.</p>
+                </div>
+                <div class="vertical-game-item discount-80">
+                    <img src="images/game12.webp" alt="Game 12">
+                    <h3>God of War: Ragnarok</h3>
+                    <p>Слешер-приключенческая игра.</p>
+                </div>
+                <div class="vertical-game-item discount-90">
+                    <img src="images/game10.webp" alt="Game 5">
+                    <h3>Cravellers Rest</h3>
+                    <p>Расслабляющая инди-игра</p>
+                </div>
+                <div class="vertical-game-item discount-50">
+                    <img src="images/game11.webp" alt="Game 6">
+                    <h3>Helldivers 2</h3>
+                    <p>Онлайн-шутер</p>
+                </div>
+                <!-- Add more game items as needed -->
+            </div>
+        </div>
+    </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>О нас</h2>
+                <p>VK - ***</p>
+                <p>Instagram - ***</p>
+                <p>Telegram - ***</p>
+                <p>YouTube - ***</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Связаться с нами</h2>
+                <form>
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Е-мейл:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Game Store. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
